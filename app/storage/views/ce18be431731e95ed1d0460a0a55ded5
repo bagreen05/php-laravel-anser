@@ -1,0 +1,28 @@
+
+<?php $__env->startSection('meta-header-start'); ?>
+    @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('meta-header-end'); ?>
+    <link rel="stylesheet" href="<?php echo URL::asset('assets/css/admin.css'); ?>"/>
+    <script type="text/javascript" src="<?php echo URL::asset('assets/js/ckeditor/ckeditor.js'); ?>"></script>
+    @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('body-start'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('body-end'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('meta-footer'); ?>
+    @parent
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

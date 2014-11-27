@@ -1,0 +1,40 @@
+
+#admin-log-container {
+    margin-top: 5em;
+}
+#admin-logo {
+    margin-bottom: 3em;
+}
+#admin-panel-logo {
+    margin: 2em 0em;
+}
+#admin-menu a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+#admin-menu li {
+    margin-bottom: 1em;
+}
+#admin-menu span {
+    display: block;
+}
+#admin-menu img {
+    width: 24px;
+}
+#admin-sidebar-menu li {
+    maring-bottom: 1em;
+}
+#admin-sidebar-menu span {
+    display: block;
+}
+#admin-sidebar-menu a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+#admin-content-container {
+    padding-top: 2em;
+}

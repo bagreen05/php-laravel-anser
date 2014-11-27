@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="column small-12">
+<?php if(!$banners->isEmpty()): ?>
+        <div class="banner-container row transparent-block box-shadow">
+            <div class="columns large-8  show-for-medium-up">
+                <ul data-orbit>
+                    <?php foreach ($banners as $banner): ?>
+                    <?php if($banner->gallery && isset($banner->gallery->images[0])): ?>
+                    <li>
+                        <img src="<?php echo URL::asset('assets/img/site/' . $banner->gallery->images[0]->name); ?>" alt="<?php echo $banner->title_ru; ?>">
+                        <div class="orbit-caption">
+                            <?php if(Session::get('language') == 'ru'): ?>
+                                <?php echo $banner->title_ru; ?>
+                            <?php else: ?>
+                                <?php echo $banner->title_ro; ?>
+                            <?php endif; ?>
+                        </div>
+                    </li>
+                    <?php endif; ?>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            <div class="columns large-4">
+                <?php if(Session::get('language') == 'ru'): ?>
+                    <?php echo Config::get('description_ru'); ?>
+                <?php else: ?>
+                    <?php echo Config::get('description_ro'); ?>
+                <?php endif; ?>
+            </div>
+        </div>
+
+<?php endif; ?>
+
+
+
+<?php if (!$partners->isEmpty()): ?>
+<div class="row partners-container box-shadow transparent-block show-for-medium-up">
+    <div class="column small-12">
+        <h4><?php echo trans('messages.our-partners'); ?></h4>
+        <hr>
+        <ul class="partners medium-block-grid-3 large-block-grid-5">
+            <?php foreach ($partners as $partner): ?>
+            <?php if($partner->gallery && isset($partner->gallery->images[0])): ?>
+            <li>
+                <div class="row">
+                    <div class="column small-12 image">
+                        <img src="<?php echo URL::asset('assets/img/site/'); ?>/<?php echo e($partner->gallery->images[0]->name); ?>" alt="<?php echo trans('messages.our-partners'); ?>">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column small-12 name">
+                        <?php echo $partner->name; ?>
+                    </div>
+                </div>
+            </li>
+            <?php endif; ?>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+<?php endif; ?>
+        </div>
+    </div>

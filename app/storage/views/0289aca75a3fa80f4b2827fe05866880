@@ -1,0 +1,62 @@
+<?php if($occupation): ?>
+    <div class="row transparent-block box-shadow">
+        <div class="column small-12 medium-12 large-3">
+            <ul class="small-block-grid-1" data-clearing>
+                <?php foreach($occupation->gallery->images as $image): ?>
+                    <li>
+                        <a href="<?php echo URL::asset('/assets/img/site/' . $image->name); ?>">
+                            <img src="<?php echo URL::asset('/assets/img/site/' . $image->name); ?>">
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <div class="column small-12 medium-12 large-9">
+            <div class="row">
+                <div class="column small-12 name">
+                    <h2>
+                        <?php if(Session::get('language') == 'ru'): ?>
+                            <?php echo $occupation->name_ru; ?>
+                        <?php else: ?>
+                            <?php echo $occupation->name_ro; ?>
+                        <?php endif; ?>
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column small-12 description">
+                    <?php if(Session::get('language') == 'ru'): ?>
+                        <?php echo $occupation->description_ru; ?>
+                    <?php else: ?>
+                        <?php echo $occupation->description_ro; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <ul class="large-block-grid-3 medium-block-grid-2 small-block-grid-1 occupation-container">
+            <?php foreach($occupation_childs as $occupation): ?>
+                <li>
+                    <a class="box-shadow transparent-block" href="<?php echo URL::to('/occupation/' . $occupation->id); ?>">
+                        <div class="row">
+                            <div class="column small-12">
+                                <img src="<?php echo URL::asset('/assets/img/site/' . $occupation->gallery->images[0]->name); ?>">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column small-12 name">
+                                <?php if(Session::get('language') == 'ru'): ?>
+                                    <?php echo $occupation->name_ru; ?>
+                                <?php else: ?>
+                                    <?php echo $occupation->name_ro; ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>

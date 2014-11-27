@@ -1,0 +1,28 @@
+<h1>Слайдер</h1>
+<fieldset>
+    <legend>Добавить слайд</legend>
+    <a href="<?php echo URL::to('admin/banner/add'); ?>">
+        <h5><img src="<?php echo URL::asset('assets/img/icons/add.png'); ?>">Добавить</h5>
+    </a>
+</fieldset>
+<fieldset>
+    <legend>Все слайды</legend>
+    <div class="row">
+        <div class="column large-12 block-grid">
+            <?php foreach ($banners as $banner): ?>
+            <div class="row">
+                <div class="columns large-3">
+                    <a href="<?php echo URL::to('/admin/banner/edit/'); ?>/<?php echo $banner->id; ?>">
+                        <img src="<?php echo URL::asset('assets/img/icons/edit.png'); ?>" alt="Редактировать">
+                        Редактировать
+                    </a>
+                </div>
+                <div class="columns large-9">
+                    <?php echo $banner->title_ru; ?>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</fieldset>
+

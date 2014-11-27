@@ -1,0 +1,28 @@
+<h1>Наши услуги</h1>
+<fieldset>
+    <legend>Добавить род занятий</legend>
+    <a href="<?php echo URL::to('admin/occupation/add'); ?>">
+        <h5><img src="<?php echo URL::asset('assets/img/icons/add.png'); ?>">Добавить</h5>
+    </a>
+</fieldset>
+<fieldset>
+    <legend>Все чем мы занимаемся</legend>
+    <div class="row">
+        <div class="column large-12 block-grid">
+            <?php foreach ($occupations as $occupation): ?>
+                <div class="row">
+                    <div class="columns large-3">
+                        <a href="<?php echo URL::to('/admin/occupation/edit/'); ?>/<?php echo $occupation->id; ?>">
+                            <img src="<?php echo URL::asset('assets/img/icons/edit.png'); ?>" alt="Edit">
+                            Редактировать
+                        </a>
+                    </div>
+                    <div class="columns large-9">
+                        <?php echo $occupation->name_ru; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</fieldset>
+

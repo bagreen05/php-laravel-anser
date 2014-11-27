@@ -1,0 +1,143 @@
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+
+<script src="<?php echo URL::asset('assets/js/gmaps.js'); ?>"></script>
+
+
+
+<!--
+
+<div class="row">
+
+    <div class="column small-12">
+
+        <ul class="large-block-grid-2 sub-menu">
+
+            <li>
+
+                <a href="<?php echo URL::to('/occupations'); ?>">Все обьекты</a>
+
+            </li>
+
+            <?php if(isset($work)): ?>
+
+                <li>
+
+                    <a href="<?php echo URL::to('/work/show/' . $work->id); ?>"><?php echo $work->name; ?></a>
+
+                </li>
+
+            <?php endif; ?>
+
+        </ul>
+
+    </div>
+
+</div>
+
+-->
+
+
+
+<div class="map-container row transparent-block box-shadow">
+
+    <div class="column small-12">
+
+        <div id="map">
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+    var map = new GMaps({
+
+        div: '#map',
+
+    <?php if(isset($work)): ?>
+
+        lat: <?php echo $work->lat; ?>,
+
+    lng: <?php echo $work->lng; ?>,
+
+    zoom: 13,
+
+    <?php else: ?>
+
+    lat: 47.023154,
+
+        lng: 28.841,
+
+        zoom: 12,
+
+    <?php endif; ?>
+
+
+
+    enableNewStyle: true
+
+    });
+
+    function AddWork(lat, lng, title, url) {
+
+        map.addMarker({
+          lat: lat,
+          lng: lng,
+          title: title,
+          click: function(e) {
+            window.location.href = url;
+          }
+        });
+        
+    }
+
+    <?php if(!$works->isEmpty()): ?>
+
+        var works = [
+
+    <?php foreach($works as $workLocal): ?>
+
+    {
+
+        id: <?php echo $workLocal->id; ?>,
+
+        name: '<?php echo $workLocal->name; ?>',
+
+        url: '<?php echo URL::to('/work/show'); ?>/<?php echo $workLocal->id; ?>',
+
+        lat: <?php echo $workLocal->lat; ?>,
+
+        lng: <?php echo $workLocal->lng; ?>
+
+    }
+
+        <?php if(last($works) != $workLocal): ?> , <?php endif; ?>
+
+    <?php endforeach; ?>
+
+    ];
+
+
+
+    for(var workIterator in works) {
+
+
+
+        AddWork(works[workIterator].lat, works[workIterator].lng, works[workIterator].name, works[workIterator].url);
+
+
+
+
+
+    }
+
+    <?php endif; ?>
+
+</script>
+

@@ -1,0 +1,24 @@
+
+<?php $__env->startSection('meta-header'); ?>
+    @parent
+    <link rel="stylesheet" href="<?php echo URL::asset('/assets/css/jquery.fancybox.css'); ?>" type="text/css" media="screen" />
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('body-start'); ?>
+    @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+    <?php echo $map; ?>
+    <?php echo $content; ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('body-end'); ?>
+    @parent
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('meta-footer'); ?>
+    @parent
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

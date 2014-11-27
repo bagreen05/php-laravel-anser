@@ -1,0 +1,238 @@
+body {
+    color: #66778F;
+
+    background: url('../img/background.png');
+
+}
+
+@font-face {
+
+    font-family: APPOPAIN; /* имя шрифта для CSS правил */
+
+    src: local("APPOPAIN"), /* проверяем наличие шрифта в ОС пользователя */
+
+    url('../ttf/APPOPAIN.TTF'); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+
+}
+
+.tabs-content .content {
+    width: 100%;
+}
+dd.active {
+    border: 1px dashed darkred;
+}
+
+fieldset {
+    background-color: white;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #50617A;
+}
+
+h4 {
+    color: #df3400;
+}
+
+a {
+    color: #df3400;
+}
+
+a.active {
+    color: #50617A;
+}
+
+a:hover {
+    color: #66778F;
+}
+
+#header-container {
+   margin: 1em 0em;
+}
+
+#header-contact, #header-about {
+    padding-top: 1.5em;
+}
+
+#header-about .header, #header-contact .phone {
+    margin-bottom: -0.2em;
+}
+
+#header-contact .phone {
+    font-weight: 500;
+}
+
+#header-contact .email, #header-about .span {
+    color: #df3400;
+}
+
+#header-contact .phone span {
+    color: #df3400;
+}
+
+.banner-container .about-company {
+
+}
+
+#top-menu li {
+    line-height: inherit;
+    padding: 0em;
+}
+
+ul#top-menu li a {
+    display: block;
+    width: 100%;
+    line-height: 3em;
+    font-size: 1.4em;
+    text-align: center;
+    text-shadow: 0px 1px 0px #e5e5ee;
+    filter: dropshadow(color=#e5e5ee,offX=0,offY=1);
+    color: #50617A;
+    /* font-family: APPOPAIN; */
+}
+
+#top-menu a.active {
+    color: #df3400;
+}
+
+
+.menu-bg-contacts, .menu-bg-home, .menu-bg-background, .menu-bg-occupations, .menu-bg-works
+{ display: block; background: url('../img/menu-background.jpeg') no-repeat; }
+
+.menu-bg-contacts { background-position: -5px -0px; width: 1000px; height: 335px; }
+.menu-bg-home { background-position: -1010px -0px; width: 1000px; height: 335px; }
+.menu-bg-background { background-position: -5px -340px; width: 1000px; height: 335px; }
+.menu-bg-occupations { background-position: -1010px -340px; width: 1000px; height: 335px; }
+.menu-bg-works { background-position: -5px -680px; width: 1000px; height: 335px; }
+
+
+#logo-container {
+    text-align: center;
+}
+
+#logo img {
+    max-width: 13em;
+}
+
+.partners li {
+    text-align: center;
+}
+
+.partners .image {
+    height: 3em;
+    line-height: 3em;
+    margin-bottom: 1em;
+}
+
+.partners img {
+    max-height: 3em;
+    max-width: 6em;
+}
+
+.block-grid .row {
+    margin-bottom: 1em;
+}
+img.root {
+    border: 2px dashed #5E2204;
+}
+
+.banner-container {
+    margin-top: 0em;
+}
+
+.banner-container .column {
+    padding: 0em;
+}
+
+.banner-container img {
+    width: 100%;
+}
+
+.banner-container .orbit-container {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.banner-container .orbit-caption {
+    font-size: 1.2em !important;
+}
+
+#map {
+    width: 100%;
+    height: 20em;
+}
+
+.map-container .column {
+    padding: 0em;
+}
+
+.map-marker {
+    position: absolute;
+}
+
+.map-block {
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+    display: none;
+    height: 100px;
+    width: 200px;
+    z-index: 9999;
+    padding: 5px;
+}
+
+.map-block.active {
+    display: block;
+}
+
+.map-block img {
+    display:block;
+    height: 90px;
+}
+
+.occupation-container li a {
+    display: block;
+    text-align: center;
+}
+
+.occupation-container .name {
+    font-size: 1.2em;
+    padding: 1em;
+}
+
+.work-show-container .root img {
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+
+[data-clearing] li {
+    margin-right: 0px;
+}
+
+.box-shadow {
+    box-shadow: 0.1em 0.1em 0.3em #66778F;
+}
+
+.transparent-block {
+    background: url('../img/transparent.png');
+}
+
+.transparent-block.row {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background: url('../img/transparent.png');
+    padding: 10px;
+}
+
+#language-container {
+    line-height: 2em;
+}
+#language-container a.active, #language-container a:hover {
+    color: #50617A;
+}
+#language-container img {
+    margin-top: -5px;
+    margin-right: 10px;
+}

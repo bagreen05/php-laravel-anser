@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="column small-12">
+
+    </div>
+</div>
+<?php if(!$occupations->isEmpty()): ?>
+    <div class="row occupation-container">
+        <div class="column small-12">
+            <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+                <?php foreach($occupations as $occupation): ?>
+                <li>
+                    <a class="box-shadow transparent-block" href="<?php echo URL::to('/occupation/' . $occupation->id . ''); ?>">
+                        <div class="row">
+                            <div class="column small-12">
+                                <img src="<?php echo URL::asset('/assets/img/site/' . $occupation->gallery->images[0]->name); ?>" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column small-12 name">
+                                <?php if(Session::get('language') == 'ru'): ?>
+                                    <?php echo $occupation->name_ru; ?>
+                                <?php else: ?>
+                                    <?php echo $occupation->name_ro; ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+<?php endif; ?>

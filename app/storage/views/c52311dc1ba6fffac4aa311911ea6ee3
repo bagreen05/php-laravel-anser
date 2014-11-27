@@ -1,0 +1,44 @@
+<div class="work-show-container row transparent-block box-shadow">
+    <div class="column small-12">
+        <div class="row">
+            <div class="column small-12">
+                <h2>
+                    <?php if(Session::get('language') == 'ru'): ?>
+                        <?php echo $work->name_ru; ?>
+                    <?php else: ?>
+                        <?php echo $work->name_ro; ?>
+                    <?php endif; ?>
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="columns small-12 root">
+                <p>
+                    <img src="<?php echo URL::asset('assets/img/site/'); ?>/<?php echo $work->gallery->images[0]->name; ?>"
+                    <?php if(Session::get('language') == 'ru'): ?>
+                        <?php echo $work->description_ru; ?>
+                    <?php else: ?>
+                        <?php echo $work->description_ro; ?>
+                    <?php endif; ?>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column small-12">
+                <ul class="large-block-grid-6 small-block-grid-1 medium-block-grid-3 clearing-thumbs" data-clearing>
+                    <?php foreach($work->gallery->images as $image): ?>
+                        <li>
+                            <a class="th" href="<?php echo URL::asset('assets/img/site'); ?>/<?php echo $image->name; ?>">
+                                <img src="<?php echo URL::asset('assets/img/site'); ?>/<?php echo $image->name; ?>">
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+</script>
